@@ -3,6 +3,7 @@ import { Product } from './product';
 import { ProductService } from './productservice';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { Client } from './client';
 
 @Component({
   selector: 'app-root',
@@ -19,22 +20,22 @@ import { MessageService } from 'primeng/api';
 export class AppComponent { 
     productDialog: boolean;
 
-    products: Product[];
+    clients: Client[];
 
-    product: Product;
+    client: Client;
 
-    selectedProducts: Product[];
+    selectedProducts: Client[];
 
     submitted: boolean;
 
     constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
 
     ngOnInit() {
-        this.productService.getProducts().then(data => this.products = data);
+        this.productService.getProducts().then(data => this.clients = data);
     }
 
     openNew() {
-        this.product = {};
+        this.client = {};
         this.submitted = false;
         this.productDialog = true;
     }
@@ -45,7 +46,7 @@ export class AppComponent {
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products = this.products.filter(val => !this.selectedProducts.includes(val));
+                this.clients = this.clients.filter(val => !this.selectedProducts.includes(val));
                 this.selectedProducts = null;
                 this.messageService.add({severity:'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
             }
@@ -53,7 +54,7 @@ export class AppComponent {
     }
 
     editProduct(product: Product) {
-        this.product = {...product};
+        this.client = {...product};
         this.productDialog = true;
     }
 
@@ -63,8 +64,8 @@ export class AppComponent {
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products = this.products.filter(val => val.id !== product.id);
-                this.product = {};
+                this.clients = this.clients.filter(val => val.id !== product.id);
+                this.client = {};
                 this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
             }
         });
@@ -78,28 +79,27 @@ export class AppComponent {
     saveProduct() {
         this.submitted = true;
 
-        if (this.product.name.trim()) {
-            if (this.product.id) {
-                this.products[this.findIndexById(this.product.id)] = this.product;                
+        if (this.client.nameClient.trim()) {
+            if (this.client.id) {
+                this.clients[this.findIndexById(this.client.id)] = this.client;                
                 this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
             }
             else {
-                this.product.id = this.createId();
-                this.product.image = 'product-placeholder.svg';
-                this.products.push(this.product);
+                this.client.id = this.createId();
+                this.clients.push(this.client);
                 this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Created', life: 3000});
             }
 
-            this.products = [...this.products];
+            this.clients = [...this.clients];
             this.productDialog = false;
-            this.product = {};
+            this.client = {};
         }
     }
 
     findIndexById(id: string): number {
         let index = -1;
-        for (let i = 0; i < this.products.length; i++) {
-            if (this.products[i].id === id) {
+        for (let i = 0; i < this.clients.length; i++) {
+            if (this.clients[i].id === id) {
                 index = i;
                 break;
             }
