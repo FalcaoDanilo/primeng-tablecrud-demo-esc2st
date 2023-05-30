@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "id": "1234",
+      "nameClient": "João Silva",
+      "Street": "Rua das Flores",
+      "CEP": "12345-678",
+      "City": "São Paulo",
+      "State": "SP"
+    },
+    {
+      "id": "5678",
+      "nameClient": "Maria Santos",
+      "Street": "Avenida Central",
+      "CEP": "54321-098",
+      "City": "Rio de Janeiro",
+      "State": "RJ"
+    },
+    {
+      "id": "9012",
+      "nameClient": "Pedro Oliveira",
+      "Street": "Rua dos Pinheiros",
+      "CEP": "98765-432",
+      "City": "Belo Horizonte",
+      "State": "MG"
+    },
+    {
+      "id": "3456",
+      "nameClient": "Ana Souza",
+      "Street": "Alameda das Palmeiras",
+      "CEP": "65432-109",
+      "City": "Salvador",
+      "State": "BA"
+    },
+    {
+      "id": "7890",
+      "nameClient": "José Almeida",
+      "Street": "Avenida Principal",
+      "CEP": "89076-543",
+      "City": "Porto Alegre",
+      "State": "RS"
+    },
+    {
+      "id": "2345",
+      "nameClient": "Sandra Ferreira",
+      "Street": "Rua das Margaridas",
+      "CEP": "21098-765",
+      "City": "Recife",
+      "State": "PE"
+    },
+    {
+      "id": "6789",
+      "nameClient": "Carlos Ribeiro",
+      "Street": "Travessa dos Ipês",
+      "CEP": "67890-321",
+      "City": "Fortaleza",
+      "State": "CE"
+    },
+    {
+      "id": "0123",
+      "nameClient": "Mariana Costa",
+      "Street": "Avenida das Acácias",
+      "CEP": "34567-890",
+      "City": "Manaus",
+      "State": "AM"
+    },
+    {
+      "id": "4567",
+      "nameClient": "Ricardo Pereira",
+      "Street": "Rua dos Lírios",
+      "CEP": "43210-987",
+      "City": "Curitiba",
+      "State": "PR"
+    },
+    {
+      "id": "8901",
+      "nameClient": "Camila Gonçalves",
+      "Street": "Alameda dos Flamboyants",
+      "CEP": "87654-321",
+      "City": "Brasília",
+      "State": "DF"
+    },
+    {
+      "id": "2341",
+      "nameClient": "Paulo Lima",
+      "Street": "Rua das Violetas",
+      "CEP": "10987-654",
+      "City": "Goiânia",
+      "State": "GO"
+    },
+    {
+      "id": "5678",
+      "nameClient": "Fernanda Rodrigues",
+      "Street": "Avenida dos Jasmins",
+      "CEP": "54321-098",
+      "City": "Vitória",
+      "State": "ES"
+    }
+  ]
+}

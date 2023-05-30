@@ -43,7 +43,7 @@
 
   <p-table
     #dt
-    [value]="products"
+    [value]="client"
     [rows]="10"
     [paginator]="true"
     [globalFilterFields]="[
@@ -52,7 +52,7 @@
       'representative.name',
       'status'
     ]"
-    [(selection)]="selectedProducts"
+    [(selection)]="selectedClient"
     [rowHover]="true"
     dataKey="id"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -77,35 +77,37 @@
         <th style="width: 3rem">
           <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
         </th>
-        <th pSortableColumn="name">
-          Nome <p-sortIcon field="name"></p-sortIcon>
+        <th pSortableColumn="nameClient">
+          Nome <p-sortIcon field="nameClient"></p-sortIcon>
         </th>
-        <th pSortableColumn="price">
-          Preço <p-sortIcon field="price"></p-sortIcon>
+        <th pSortableColumn="CEP">
+        CEP <p-sortIcon field="CEP"></p-sortIcon>
+      </th>
+        <th pSortableColumn="Street">
+          Rua <p-sortIcon field="Street"></p-sortIcon>
         </th>
-        <th pSortableColumn="category">
-          Categoria <p-sortIcon field="category"></p-sortIcon>
+        <th pSortableColumn="city">
+          Cidade <p-sortIcon field="city"></p-sortIcon>
         </th>
-        <th pSortableColumn="rating">
-          Avaliações <p-sortIcon field="rating"></p-sortIcon>
-        </th>
-        <th pSortableColumn="inventoryStatus">
-          Estado <p-sortIcon field="inventoryStatus"></p-sortIcon>
+        <th pSortableColumn="state">
+          Estado <p-sortIcon field="state"></p-sortIcon>
         </th>
         <th></th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
+    <ng-template pTemplate="body" let-client>
       <tr>
         <td>
-          <p-tableCheckbox [value]="product"></p-tableCheckbox>
+          <p-tableCheckbox [value]="client"></p-tableCheckbox>
         </td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.price | currency: 'USD' }}</td>
-        <td>{{ product.category }}</td>
+        <td>{{ client.nameClient }}</td>
+        <td>{{ client.cep }}</td>
+        <td>{{ client.street }}</td>
+        <td>{{ client.city }}</td>
+        <td>{{ client.state }}</td>
         <td>
           <p-rating
-            [ngModel]="product.rating"
+            [ngModel]="client.rating"
             [readonly]="true"
             [cancel]="false"
           ></p-rating>
@@ -113,9 +115,9 @@
         <td>
           <span
             [class]="
-              'product-badge status-' + product.inventoryStatus.toLowerCase()
+              'product-badge status-' + client.inventoryStatus.toLowerCase()
             "
-            >{{ product.inventoryStatus }}</span
+            >{{ client.inventoryStatus }}</span
           >
         </td>
         <td>
