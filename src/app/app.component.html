@@ -80,9 +80,7 @@
         <th pSortableColumn="nameClient">
           Nome <p-sortIcon field="nameClient"></p-sortIcon>
         </th>
-        <th pSortableColumn="CEP">
-        CEP <p-sortIcon field="CEP"></p-sortIcon>
-      </th>
+        <th pSortableColumn="CEP">CEP <p-sortIcon field="CEP"></p-sortIcon></th>
         <th pSortableColumn="Street">
           Rua <p-sortIcon field="Street"></p-sortIcon>
         </th>
@@ -98,7 +96,7 @@
     <ng-template pTemplate="body" let-client>
       <tr>
         <td>
-          <p-tableCheckbox [value]="client"></p-tableCheckbox>
+          <p-tableCheckbox [value]="clients"></p-tableCheckbox>
         </td>
         <td>{{ client.nameClient }}</td>
         <td>{{ client.cep }}</td>
